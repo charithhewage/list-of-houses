@@ -20,8 +20,8 @@ gem 'bootstrap', '~> 4.1.1'
 gem 'coffee-rails', '~> 4.2'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
-# Use ActiveModel has_secure_password
-gem 'bcrypt', '~> 3.1.7'
+# Use Devise for authorization and authentication
+gem 'devise', '4.4.3'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
