@@ -16,6 +16,8 @@ gem 'uglifier', '>= 1.3.0'
 # As the frontend framework
 gem 'bootstrap', '~> 4.1.1'
 
+# Include static pages easily
+gem 'high_voltage', '~> 3.1.0'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
