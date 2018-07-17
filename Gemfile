@@ -16,12 +16,14 @@ gem 'uglifier', '>= 1.3.0'
 # As the frontend framework
 gem 'bootstrap', '~> 4.1.1'
 
+# Include static pages easily
+gem 'high_voltage', '~> 3.1.0'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
-# Use ActiveModel has_secure_password
-gem 'bcrypt', '~> 3.1.7'
+# Use Devise for authorization and authentication
+gem 'devise', '4.4.3'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
