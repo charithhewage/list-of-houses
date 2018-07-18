@@ -1,0 +1,2 @@
+scss_files: 'app/assets/stylesheets/**/*.scss'
+exclude:    'app/assets/stylesheets/bootswatch/**'
