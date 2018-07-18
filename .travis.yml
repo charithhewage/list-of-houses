@@ -1,0 +1,30 @@
+dist: trusty
+sudo: false
+language: ruby
+rvm:
+# - 2.3.4
+- 2.4.1
+
+env:
+  global:
+  - RAILS_ENV=test
+
+cache:
+  directories:
+  - vendor/bundle
+  - node_modules
+
+jobs:
+  include:
+  - stage: test
+    addons:
+      postgresql: "9.6"
+    before_script:
+    - psql -c "CREATE DATABASE \"list-of-houses_test\";" -U postgres
+    - psql -c "CREATE USER \"list-of-houses\" WITH PASSWORD 'list-of-houses';" -U postgres
+    - psql -c "GRANT ALL PRIVILEGES ON DATABASE \"list-of-houses_test\" TO \"list-of-houses\";" -U postgres
+    - psql -c "ALTER USER \"list-of-houses\" WITH SUPERUSER" -U postgres
+    - bundle exec rails db:setup
+    script: bundle exec rails test
+    after_script:
+    - bundle exec rails db:drop
