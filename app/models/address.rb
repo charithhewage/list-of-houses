@@ -1,4 +1,8 @@
 class Address < ApplicationRecord
+
+	belongs_to :house
+
+	
   before_save :upcase_state
 
   validates :address_1, presence: true

@@ -10,11 +10,13 @@ class HousesController < ApplicationController
 
   def new
     @house = House.new
+    @house.build_address
   end
 
   def edit; end
 
   def create
+
     @house = House.new house_params
     @house.user = current_user
 
@@ -37,6 +39,6 @@ class HousesController < ApplicationController
 
   def house_params
     params.require(:house).permit(:rent, :deposit,
-                                  :description)
+                                  :description, address_attributes: [:state])
   end
 end
