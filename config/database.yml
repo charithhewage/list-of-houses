@@ -16,17 +16,14 @@
 #
 default: &default
   adapter: postgresql
-  username: list-of-houses
-  password: list-of-houses
-  host: 127.0.0.1
   encoding: unicode
-  # For details on connection pooling, see Rails configuration guide
-  # http://guides.rubyonrails.org/configuring.html#database-pooling
-  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  pool: 5
 
 development:
   <<: *default
-  database: list-of-houses_development
+  database: stack_test_app_development
+  username: me
+  password: 
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
