@@ -22,7 +22,7 @@ default: &default
 development:
   <<: *default
   database: stack_test_app_development
-  username: charithlakmina
+  username: me
   password: 
 
   # The specified database role being used to connect to postgres.
