@@ -1,0 +1,32 @@
+<div class="col-md-8 mx-auto">
+  <div class="table-responsive">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Rent</th>
+          <th>Deposit</th>
+          <th>Address</th>
+          <th>Zip code</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% if @house.present? %>
+          <% @house.each do |house| %>
+          <tr>
+            <td><%= house.rent %></td>
+            <td><%= house.deposit %></td>
+            <td><%= house.address.address_1 %></td>
+            <td><%= house.address.zip_code %></td>
+          </tr>
+          <% end %>
+        <% else %>
+        <tr>
+          <td colspan="4">
+            Space X is trying to be on Mars. You should join them
+          </td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
